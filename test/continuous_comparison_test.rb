@@ -7,7 +7,7 @@ class ContinuousComparisonTest < Minitest::Test
     refute_nil ::ContinuousComparison::VERSION
   end
 
-  def test_integer_and_integer
+  def test_continuous_comparison
     assert   1 < 2 < 3
     assert !(1 < 3 < 2)
     assert !(2 < 1 < 3)
@@ -27,5 +27,56 @@ class ContinuousComparisonTest < Minitest::Test
     assert   1.0 < 2.0
     assert !(1.0 < 1.0)
     assert !(2.0 < 1.0)
+    assert   "1" < "2"
+    assert !("1" < "1")
+    assert !("2" < "1")
+
+    assert   1 <= 2
+    assert   1 <= 1
+    assert !(2 <= 1)
+    assert   1 <= 2.0
+    assert   1 <= 1.0
+    assert !(2 <= 1.0)
+    assert   1.0 <= 2
+    assert   1.0 <= 1
+    assert !(2.0 <= 1)
+    assert   1.0 <= 2.0
+    assert   1.0 <= 1.0
+    assert !(2.0 <= 1.0)
+    assert   "1" <= "2"
+    assert   "1" <= "1"
+    assert !("2" <= "1")
+
+    assert !(1 > 2)
+    assert !(1 > 1)
+    assert   2 > 1
+    assert !(1 > 2.0)
+    assert !(1 > 1.0)
+    assert   2 > 1.0
+    assert !(1.0 > 2)
+    assert !(1.0 > 1)
+    assert   2.0 > 1
+    assert !(1.0 > 2.0)
+    assert !(1.0 > 1.0)
+    assert   2.0 > 1.0
+    assert !("1" > "2")
+    assert !("1" > "1")
+    assert   "2" > "1"
+
+    assert !(1 >= 2)
+    assert   1 >= 1
+    assert   2 >= 1
+    assert !(1 >= 2.0)
+    assert   1 >= 1.0
+    assert   2 >= 1.0
+    assert !(1.0 >= 2)
+    assert   1.0 >= 1
+    assert   2.0 >= 1
+    assert !(1.0 >= 2.0)
+    assert   1.0 >= 1.0
+    assert   2.0 >= 1.0
+    assert !("1" >= "2")
+    assert   "1" >= "1"
+    assert   "2" >= "1"
   end
 end

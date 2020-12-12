@@ -1,5 +1,4 @@
 require "continuous_comparison/version"
-require "continuous_comparison/no_warning"
 
 module ContinuousComparison
   refine Integer do
@@ -17,20 +16,6 @@ module ContinuousComparison
   end
 
   refine Comparable do
-    def  <(other); super && other; end
-    def <=(other); super && other; end
-    def  >(other); super && other; end
-    def >=(other); super && other; end
-  end
-
-  refine Module do
-    def  <(other); super && other; end
-    def <=(other); super && other; end
-    def  >(other); super && other; end
-    def >=(other); super && other; end
-  end
-
-  refine Hash do
     def  <(other); super && other; end
     def <=(other); super && other; end
     def  >(other); super && other; end
