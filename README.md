@@ -1,8 +1,6 @@
-# ContinuousComparison
+# Continuous Comparison
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/continuous_comparison`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Enable to continuously compare like 1 <= x < 5
 
 ## Installation
 
@@ -22,7 +20,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require "continuous_comparison"
+
+using ContinuousComparison
+
+x = 3
+puts "OK!" if 1 <= x < 5
+```
 
 ## Development
 
